@@ -5,4 +5,4 @@ Proto-Sat 3d Printer STL files.
 ![ProtoSatZero with 3d printed case](/images/protosatzerocase1.jpg)
 
 ## ProtoSat 3d printed badge holder:
-![ProtoSatZero with 3d printed badge holder](/images/protosatzerobadge2.jpg)
+![ProtoSatZero with 3d printed badge holder](/images/protosatzerobadge1.jpg)
