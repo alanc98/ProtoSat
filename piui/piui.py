@@ -216,7 +216,7 @@ def DisplayTextScript(text_screen):
    #
    # Load default font.
    #
-   LoadFont()
+   font = LoadFont()
 
    #
    # End common Display code --------------------------------------------
@@ -295,7 +295,7 @@ def DisplayTelemetryScreen(telemetry_screen):
       x = padding
 
       # Load default font.
-      font = ImageFont.load_default()
+      font = LoadFont()
 
       #
       # End common Display code ---------------------
@@ -374,7 +374,7 @@ def DisplayMenuScreen(menu_screen, current_item):
    x = padding
 
    # Load default font.
-   font = ImageFont.load_default()
+   font = LoadFont()
 
    #
    # End common Display code --------------------------------------------
