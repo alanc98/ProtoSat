@@ -1,0 +1,40 @@
+/* System */
+psz/sys/ipaddr
+psz/sys/hostname
+psz/sys/cpuutil
+psz/sys/memfree
+
+/* cFS */
+psz/cfs/status
+
+/* BMP280 */
+psz/bmp280/temp
+psz/bmp280/pressure
+psz/bmp280/altitude
+
+/* LSM9DS1 */
+psz/lsm9ds1/gryo_x
+psz/lsm9ds1/gryo_y
+psz/lsm9ds1/gryo_z
+
+psz/lsm9ds1/mag_x
+psz/lsm9ds1/mag_y
+psz/lsm9ds1/mag_z
+
+psz/lsm9ds1/accel_x
+psz/lsm9ds1/accel_y
+psz/lsm9ds1/accel_z
+
+psz/lsm9ds1/temp
+
+/* APDS 9960 */
+psz/apds9960/red
+psz/apds9960/green
+psz/apds9960/blue
+psz/apds9960/clear
+psz/apds9960/color_temp
+psz/apds9960/lux
+
+psz/apds9960/prox
+psz/apds9660/gesture
+
