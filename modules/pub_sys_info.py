@@ -1,4 +1,7 @@
-# 
+#!/usr/bin/env python3
+
+#
+# Publish System data to MQTT
 #
 import time
 import os
@@ -8,8 +11,8 @@ import subprocess
 import paho.mqtt.client as mqtt
 
 mqtt_broker_address = '127.0.0.1'
-cpu_utilization     = "0.0"
-ip_address          = '127.0.0.1'
+client = mqtt.Client("SYSINFO")
+client.connect(mqtt_broker_address)
 
 #
 # Get the system's IP address
@@ -19,18 +22,25 @@ ip_address          = '127.0.0.1'
 cmd = "hostname -I | cut -d\' \' -f1"
 ip_address = subprocess.check_output(cmd, shell = True )
 ip_address = ip_address.rstrip()
-print ("IP Address = ", ip_address.decode())
 
 #
 # Get Hostname
 #
 hostname = socket.gethostname()
-print ("Hostname = ",hostname)
 
-# Create the MQTT client object
-client = mqtt.Client("SYSINFO")
+cpuutil = '10.0'
+memfree =  '256'
 
-# Connect to the MQTT Broker
-client.connect(mqtt_broker_address)
+while True:
+    # print ("IP Address = ", ip_address.decode())
+    # print ("Hostname = ",hostname)
+    # print ("Cpu util = ",cpuutil)
+    # print ("Mem = ",memfree)
 
-print("Exiting!")
+    client.publish('psz/sys/ipaddr',   ip_address)
+    client.publish('psz/sys/hostname', hostname)
+    client.publish('psz/sys/cpuutil', cpuutil)
+    client.publish('psz/sys/memfree', memfree)
+
+    time.sleep(2)
+
