@@ -2,8 +2,6 @@
 
 #
 # Publish LSM9DS1 data to MQTT
-# This will publish the acceleration, magnetometer,
-# and gyroscope values every second.
 #
 import paho.mqtt.client as mqtt
 import time
