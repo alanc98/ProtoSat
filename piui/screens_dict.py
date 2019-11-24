@@ -1,31 +1,11 @@
 #
-# Note: On the Adafruit SSD1306 1.3" 128x64 OLED screen, with the default font,
+# This file contains the piui screen defintions.
+# Docs on the screen types and fields needed TBD.
+#
+# This is currently for the Adafruit SSD1306 OLED 128x64 screen.
+# On the Adafruit SSD1306 1.3" 128x64 OLED screen, with the default font,
 # you can fit 20 characters on a single line and 7 lines of text on the screen
 #
-#
-# Next: For telemetry screens , define an MQTT topic ( probably just use a single broker
-#                               and a variable with a default. 
-# Next Ideas: 
-# 1. Have a "User scripts" menu on the Main menu if it fits.
-# 2. Move the IP address to data menu and call it "system data"
-# 
-# Future idea: Scrolling menus with more than 7 lines! This would take a bit of work
-# 
-#
-#
-#  Screen Map:
-#   1 - Start Splash/Logo screen
-#   2 - Main Menu
-#   3 - Telemetry Menu
-#   4 - cFS Menu
-#   5 - System Menu  
-#   6 - Halt System/Are you sure screen
-#   7 - Restart System/Are you sure screen
-#   8 - Shutdown graphic script screen (displays shutting down graphic)
-#   9 - Shutdown text script screen (same thing, displays shutting down text screen)
-#  10 - Restart text script screen
-#  11 - Badge Graphic Screen 
-#  12 - IMU Telemetry data screen
 #    
 screens = { 1 :  {"screen_type"  : "graphics",
                   "imagefile"    : "/home/pi/ProtoSat/piui/images/protosat_logo_64.png",
@@ -47,9 +27,9 @@ screens = { 1 :  {"screen_type"  : "graphics",
                             2 : { "type" : "menu", "text" : "IMU Data"          , "next" : 3, "action" : "screen", "arg" : 17 },
                             3 : { "type" : "menu", "text" : "Enviro Data"       , "next" : 4, "action" : "screen", "arg" : 18 },
                             4 : { "type" : "menu", "text" : "cFS Tlm Data"      , "next" : 5, "action" : "screen", "arg" : 19 },
-                            5 : { "type" : "menu", "text" : "System Data"       , "next" : 6, "action" : "screen", "arg" : 20 },
-                            6 : { "type" : "menu", "text" : "<--Back"           , "next" : 2, "action" : "screen", "arg" :  2 },
-                            7 : { "type" : "text", "text" : " "   },
+                            5 : { "type" : "menu", "text" : "Lux Data"          , "next" : 6, "action" : "screen", "arg" : 21 },
+                            6 : { "type" : "menu", "text" : "System Data"       , "next" : 7, "action" : "screen", "arg" : 20 },
+                            7 : { "type" : "menu", "text" : "<--Back"           , "next" : 2, "action" : "screen", "arg" :  2 },
                            }, 
                 },
 
@@ -166,20 +146,20 @@ screens = { 1 :  {"screen_type"  : "graphics",
 
            17 : {"screen_type" : "telemetry", "screen_name" : "imu_data", 
                  "rows" : { 1 : { "type" : "text", "text" : "----- IMU Data -----"}, 
-                            2 : { "type" : "data", "text" : "mem: "    ,"topic": "psz/sys/memfree"},
-                            3 : { "type" : "data", "text" : "cpuutil: ","topic": "psz/sys/cpuutil"},
-                            4 : { "type" : "data", "text" : "hname: "  ,"topic": "psz/sys/hostname"},
-                            5 : { "type" : "text", "text" : ""                    },
-                            6 : { "type" : "text", "text" : "--------------------"},
-                            7 : { "type" : "text", "text" : "Hit key to exit"     },
+                            2 : { "type" : "data", "text" : "gyro X:","topic": "psz/lsm9ds1/gyro_x"},
+                            3 : { "type" : "data", "text" : "gyro Y:","topic": "psz/lsm9ds1/gyro_y"},
+                            4 : { "type" : "data", "text" : "gyro Z:","topic": "psz/lsm9ds1/gyro_z"},
+                            5 : { "type" : "data", "text" : "accl X:","topic": "psz/lsm9ds1/accel_x"},
+                            6 : { "type" : "data", "text" : "accl Y:","topic": "psz/lsm9ds1/accel_y"},
+                            7 : { "type" : "data", "text" : "accl Z:","topic": "psz/lsm9ds1/accel_z"},
                           },
                  "exit_to"     : 3 },
 
            18 : {"screen_type" : "telemetry", "screen_name" : "enviro_data", 
                  "rows" : { 1 : { "type" : "text", "text" : "--- Enviro Data ----"}, 
-                            2 : { "type" : "data", "text" : "mem: ","topic":     "psz/sys/memfree"},
-                            3 : { "type" : "data", "text" : "cpuutil: ","topic": "psz/sys/cpuutil"},
-                            4 : { "type" : "data", "text" : "hname: ","topic":   "psz/sys/hostname"},
+                            2 : { "type" : "data", "text" : "temp: ","topic": "psz/bmp280/temp"},
+                            3 : { "type" : "data", "text" : "humid:","topic": "psz/bmp280/humidity"},
+                            4 : { "type" : "data", "text" : "alt"   ,"topic": "psz/bmp280/altitude"},
                             5 : { "type" : "text", "text" : "               "     },
                             6 : { "type" : "text", "text" : "--------------------"},
                             7 : { "type" : "text", "text" : "Hit key to exit"     },
@@ -189,13 +169,14 @@ screens = { 1 :  {"screen_type"  : "graphics",
            19 : {"screen_type" : "telemetry", "screen_name" : "cfs_data", 
                  "rows" : { 1 : { "type" : "text", "text" : "--- cFS Data -------"}, 
                             2 : { "type" : "data", "text" : "cFS Status:" ,"topic": "psz/cfs/status" },
-                            3 : { "type" : "data", "text" : "cpuutil:"    ,"topic": "psz/sys/cpuutil"},
-                            4 : { "type" : "data", "text" : "hname:"      ,"topic": "psz/sys/hostname"},
+                            3 : { "type" : "text", "text" : " "                   },
+                            4 : { "type" : "text", "text" : " "                   },
                             5 : { "type" : "text", "text" : " "                   },
                             6 : { "type" : "text", "text" : "--------------------"},
                             7 : { "type" : "text", "text" : "Hit key to exit"     },
                           },
                  "exit_to"     : 3 },
+
            20 : {"screen_type" : "telemetry", "screen_name" : "sys_data", 
                  "rows" : { 1 : { "type" : "text", "text" : "--- System Data ----"}, 
                             2 : { "type" : "data", "text" : "Mem  :","topic":    "psz/sys/memfree"},
@@ -203,6 +184,17 @@ screens = { 1 :  {"screen_type"  : "graphics",
                             4 : { "type" : "data", "text" : "Host:" ,"topic":    "psz/sys/hostname"},
                             5 : { "type" : "data", "text" : "IP:"   ,"topic":    "psz/sys/ipaddr"},
                             6 : { "type" : "text", "text" : "--------------------"},
+                            7 : { "type" : "text", "text" : "Hit key to exit"     },
+                          },
+                 "exit_to"     : 3 },
+
+           21 : {"screen_type" : "telemetry", "screen_name" : "lux_data", 
+                 "rows" : { 1 : { "type" : "text", "text" : "---- Lux Data -----"}, 
+                            2 : { "type" : "data", "text" : "Red   :","topic": "psz/apds9960/red"},
+                            3 : { "type" : "data", "text" : "Green :","topic": "psz/apds9960/green"},
+                            4 : { "type" : "data", "text" : "Blue  :","topic": "psz/apds9960/blue"},
+                            5 : { "type" : "data", "text" : "Clear :","topic": "psz/apds9960/clear"},
+                            6 : { "type" : "data", "text" : "lux   :","topic": "psz/apds9960/lux"},
                             7 : { "type" : "text", "text" : "Hit key to exit"     },
                           },
                  "exit_to"     : 3 },
