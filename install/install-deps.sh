@@ -7,4 +7,7 @@ sudo apt install mosquitto-clients
 sudo apt install python3-pip
 sudo apt install cmake
 sudo apt install git
+
+sudo pip3 install psutil
+sudo pip3 install eclipse-paho ( ?? ) 
  
