@@ -22,4 +22,12 @@ fi
 # 
 python3 /home/pi/ProtoSat/piui/piui.py &
 
+#
+# Start the scripts that publish sensor data to MQTT 
+#
+python3 /home/pi/ProtoSat/modules/pub_sys_info.py &
+python3 /home/pi/ProtoSat/modules/pub_apds9960_data.py &
+python3 /home/pi/ProtoSat/modules/pub_bmp280_data.py &
+python3 /home/pi/ProtoSat/modules/pub_lsm9ds1_data.py &
+
 exit 0

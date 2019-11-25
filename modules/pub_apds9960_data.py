@@ -31,12 +31,12 @@ while True:
     temp = colorutility.calculate_color_temperature(r, g, b)
     lux = colorutility.calculate_lux(r, g, b) 
 
-    print("red: ", r)
-    print("green: ", g)
-    print("blue: ", b)
-    print("clear: ", c)
-    print("color temp {0:0.2f}".format(temp))
-    print("light lux {0:0.2f}".format(lux))
+    # print("red: ", r)
+    # print("green: ", g)
+    # print("blue: ", b)
+    # print("clear: ", c)
+    # print("color temp {0:0.2f}".format(temp))
+    # print("light lux {0:0.2f}".format(lux))
 
     client.publish('psz/apds9960/red', r)
     client.publish('psz/apds9960/green', g)
@@ -45,4 +45,4 @@ while True:
     client.publish('psz/apds9960/color_temp', '{0:0.2f}'.format(temp))
     client.publish('psz/apds9960/lux', '{0:0.2f}'.format(lux))
 
-    time.sleep(0.5)
+    time.sleep(1)
