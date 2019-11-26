@@ -36,22 +36,38 @@ ip_address = ip_address.rstrip()
 #
 hostname = socket.gethostname()
 
-cpuutil = '10.0'
-memfree =  '256'
-diskfree = '1234'
-
 while True:
-    # print ("IP Address = ", ip_address.decode())
-    # print ("Hostname = ",hostname)
-    # print ("Cpu util = ",cpuutil)
-    # print ("Mem = ",memfree)
-    # print ("disk = ",diskfree)
+
+    #
+    # Get CPU load average
+    #
+    load_avg = psutil.getloadavg()
+    cpu_util = (load_avg[0] * 100)
+
+    #
+    # Get MB free on root disk
+    #
+    disk_usage = psutil.disk_usage('/')
+    mb_free = (disk_usage[2] / (1024*1024))
+
+    #
+    # Get memory free
+    #
+    memory_info = psutil.virtual_memory()
+    memory_avail = memory_info[1]
+    mb_avail = (memory_avail / (1024*1024))
 
     client.publish('psz/sys/ipaddr',   ip_address)
     client.publish('psz/sys/hostname', hostname)
-    client.publish('psz/sys/cpuutil',  cpuutil)
-    client.publish('psz/sys/memfree',  memfree)
-    client.publish('psz/sys/diskfree', diskfree)
+    client.publish('psz/sys/cpuutil',  cpu_util)
+    client.publish('psz/sys/memfree', '{0:0.2f}'.format(mb_avail))
+    client.publish('psz/sys/diskfree', '{0:0.2f}'.format(mb_free))
+
+    # print ("IP Address = ", ip_address.decode())
+    # print ("Hostname = ",hostname)
+    # print ("Cpu util = ",cpu_util)
+    # print ("Mem = ",mb_avail)
+    # print ("disk = ",mb_free)
 
     time.sleep(5)
 
