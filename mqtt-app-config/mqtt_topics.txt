@@ -1,0 +1,34 @@
+"psz/sys/ipaddr"          : string16
+"psz/sys/hostname"        : string32 
+"psz/sys/cpuutil"         : float 
+"psz/sys/memfree"         : float 
+"psz/sys/diskfree"        : float 
+"psz/cfs/status"          : string16
+
+
+"psz/bmp280/temp"         : float 
+"psz/bmp280/pressure"     : float
+"psz/bmp280/altitude"     : float
+
+"psz/lsm9ds1/gyro_x"      : float 
+"psz/lsm9ds1/gyro_y"      : float 
+"psz/lsm9ds1/gyro_z"      : float 
+"psz/lsm9ds1/mag_x"       : float 
+"psz/lsm9ds1/mag_y"       : float 
+"psz/lsm9ds1/mag_z"       : float 
+"psz/lsm9ds1/accel_x"     : float 
+"psz/lsm9ds1/accel_y"     : float 
+"psz/lsm9ds1/accel_z"     : float 
+"psz/lsm9ds1/temp"        : float 
+
+"psz/apds9960/red"        : int32
+"psz/apds9960/green"      : int32 
+"psz/apds9960/blue"       : int32 
+"psz/apds9960/clear"      : int32 
+"psz/apds9960/color_temp" : float
+"psz/apds9960/lux"        : float  - May want to make this an int.. Does not seem to accurate
+"psz/apds9960/prox"       : float
+"psz/apds9960/gesture"    : text16 
+
+may also want to try to use processed data for the sensor.
+
