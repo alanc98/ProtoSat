@@ -63,7 +63,7 @@ MQTT_Mqtt2SbTableEntry_t MQTT_Mqtt2SbTable[MQTT_MQTT2SB_MAX_TBL_ENTRIES] =
     },
     {
         .MsgType           = MQTT_PRIMITIVE,
-        .MsgId             = MQTT_SYS_CPUUTIL_TLM_MID
+        .MsgId             = MQTT_SYS_CPUUTIL_TLM_MID,
         .MqttTopic          = "psz/sys/cpuutil",
         .PktType           = MQTT_TLM_PKT,
         .DataType          = MQTT_FLOAT,
@@ -71,7 +71,7 @@ MQTT_Mqtt2SbTableEntry_t MQTT_Mqtt2SbTable[MQTT_MQTT2SB_MAX_TBL_ENTRIES] =
     },
     {   
         .MsgType           = MQTT_PRIMITIVE,
-        .MsgId             = MQTT_SYS_MEMFREE_TLM_MID
+        .MsgId             = MQTT_SYS_MEMFREE_TLM_MID,
         .MqttTopic          = "psz/sys/memfree",
         .PktType           = MQTT_TLM_PKT,
         .DataType          = MQTT_FLOAT,
@@ -79,7 +79,7 @@ MQTT_Mqtt2SbTableEntry_t MQTT_Mqtt2SbTable[MQTT_MQTT2SB_MAX_TBL_ENTRIES] =
     },
     {   
         .MsgType           = MQTT_PRIMITIVE,
-        .MsgId             = MQTT_SYS_DISKFREE_TLM_MID
+        .MsgId             = MQTT_SYS_DISKFREE_TLM_MID,
         .MqttTopic          = "psz/sys/diskfree",
         .PktType           = MQTT_TLM_PKT,
         .DataType          = MQTT_FLOAT,
