@@ -94,28 +94,28 @@ static TO_subscription_t  TO_SubTable[] =
             {MQTT_BMP280_PRESSURE_TLM_MID,   {0,0},  4},
             {MQTT_BMP280_ALTITUDE_TLM_MID,   {0,0},  4},
 
-            {MQTT_LSM9DS1_GYRO_X_TLM_MID    0x0910
-            {MQTT_LSM9DS1_GYRO_Y_TLM_MID    0x0911
-            {MQTT_LSM9DS1_GYRO_Z_TLM_MID    0x0912
-            {MQTT_LSM9DS1_MAG_X_TLM_MID     0x0913
-            {MQTT_LSM9DS1_MAG_Y_TLM_MID     0x0914
-            {MQTT_LSM9DS1_MAG_Z_TLM_MID     0x0915
-            {MQTT_LSM9DS1_ACCEL_X_TLM_MID   0x0916
-            {MQTT_LSM9DS1_ACCEL_Y_TLM_MID   0x0917
-            {MQTT_LSM9DS1_ACCEL_Z_TLM_MID   0x0918
-            {MQTT_LSM9DS1_TEMP_TLM_MID      0x0919
+            {MQTT_LSM9DS1_GYRO_X_TLM_MID,    {0,0},  4}, 
+            {MQTT_LSM9DS1_GYRO_Y_TLM_MID,    {0,0},  4},
+            {MQTT_LSM9DS1_GYRO_Z_TLM_MID,    {0,0},  4}, 
+            {MQTT_LSM9DS1_MAG_X_TLM_MID,     {0,0},  4},
+            {MQTT_LSM9DS1_MAG_Y_TLM_MID,     {0,0},  4},
+            {MQTT_LSM9DS1_MAG_Z_TLM_MID,     {0,0},  4},
+            {MQTT_LSM9DS1_ACCEL_X_TLM_MID,   {0,0},  4},
+            {MQTT_LSM9DS1_ACCEL_Y_TLM_MID,   {0,0},  4}, 
+            {MQTT_LSM9DS1_ACCEL_Z_TLM_MID,   {0,0},  4},
+            {MQTT_LSM9DS1_TEMP_TLM_MID,      {0,0},  4},
 
             /*
             ** APDS9960 Messages
             */
-            {MQTT_APDS9960_RED_TLM_MID       0x0950
-            {MQTT_APDS9960_BLUE_TLM_MID      0x0951
-            {MQTT_APDS9960_GREEN_TLM_MID     0x0952
-            {MQTT_APDS9960_CLEAR_TLM_MID     0x0953
-            {MQTT_APDS9960_COLOR_TMP_TLM_MID 0x0954
-            {MQTT_APDS9960_LUX_TLM_MID       0x0955
-            {MQTT_APDS9960_PROX_TLM_MID      0x0956
-            {MQTT_APDS9960_GESTURE_TLM_MID   0x0957
+            {MQTT_APDS9960_RED_TLM_MID,      {0,0},  4},
+            {MQTT_APDS9960_BLUE_TLM_MID,     {0,0},  4}, 
+            {MQTT_APDS9960_GREEN_TLM_MID,    {0,0},  4}, 
+            {MQTT_APDS9960_CLEAR_TLM_MID,    {0,0},  4},
+            {MQTT_APDS9960_COLOR_TMP_TLM_MID,{0,0},  4}, 
+            {MQTT_APDS9960_LUX_TLM_MID,      {0,0},  4},
+            {MQTT_APDS9960_PROX_TLM_MID,     {0,0},  4},
+            {MQTT_APDS9960_GESTURE_TLM_MID,  {0,0},  4},
 
             {TO_UNUSED,              {0,0},  0},
             {TO_UNUSED,              {0,0},  0}
