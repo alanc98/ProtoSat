@@ -1,5 +1,9 @@
 #!/bin/bash
 # Start the cFS
 #
-echo "start cFS!"
- 
+(cd /home/pi/cFS/build/exe/cpu1 && exec ./core-cpu1)&
+
+#
+# Publish cFS status to mqtt
+# 
+mosquitto-pub -t "/psz/cfs/status" -m "running"
