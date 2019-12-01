@@ -32,8 +32,8 @@
 /*
 ** Linux System messages
 */
-#define MQTT_SYS_IPADDR_MID           0x0900
-#define MQTT_SYS_HOSTNAME_MID         0x0901
+#define MQTT_SYS_IPADDR_TLM_MID       0x0900
+#define MQTT_SYS_HOSTNAME_TLM_MID     0x0901
 #define MQTT_SYS_CPUUTIL_TLM_MID      0x0902
 #define MQTT_SYS_MEMFREE_TLM_MID      0x0903
 #define MQTT_SYS_DISKFREE_TLM_MID     0x0904
