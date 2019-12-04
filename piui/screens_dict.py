@@ -33,7 +33,7 @@ screens = { 1 :  {"screen_type"  : "graphics",
                            }, 
                 },
 
-            4 : {"screen_type" : "menu", "screen_name" : "cfs_menu", "first_menu" : 4,
+            4 : {"screen_type" : "menu", "screen_name" : "cfs_menu", "first_menu" : 3,
                  "rows" : { 1 : { "type" : "text", "text" : "----- cFS Menu -----"    }, 
                             2 : { "type" : "data", "text" : "cFS Status:",        "topic": "psz/cfs/status" },
                             3 : { "type" : "menu", "text" : "Start cFS"         , "next" : 4, "action" : "script", "arg" : "/home/pi/ProtoSat/piui/scripts/startcfs.sh" },
