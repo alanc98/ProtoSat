@@ -6,4 +6,4 @@
 #
 # Publish cFS status to mqtt
 # 
-mosquitto-pub -t "/psz/cfs/status" -m "running"
+mosquitto_pub -t "psz/cfs/status" -m "running"

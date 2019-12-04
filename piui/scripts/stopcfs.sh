@@ -3,4 +3,4 @@
 #
 echo "stop the cFS!"
 pkill -9 "core-cpu1"
-mosquitto-pub -t "psz/cfs/status" -m "stopped"
+mosquitto_pub -t "psz/cfs/status" -m "stopped"
