@@ -50,7 +50,7 @@ MQTT_Mqtt2SbTableEntry_t MQTT_Mqtt2SbTable[MQTT_MQTT2SB_MAX_TBL_ENTRIES] =
         .MsgId             = MQTT_SYS_IPADDR_TLM_MID,
         .MqttTopic         = "psz/sys/ipaddr",
         .PktType           = MQTT_TLM_PKT,
-        .DataType          = MQTT_STRING16,
+        .DataType          = MQTT_STRING32,
         .DataLength        = 16
     },
     {
@@ -95,7 +95,7 @@ MQTT_Mqtt2SbTableEntry_t MQTT_Mqtt2SbTable[MQTT_MQTT2SB_MAX_TBL_ENTRIES] =
         .MsgId             = MQTT_CFS_STATUS_TLM_MID,
         .MqttTopic          = "psz/cfs/status",
         .PktType           = MQTT_TLM_PKT,
-        .DataType          = MQTT_STRING16,
+        .DataType          = MQTT_STRING32,
         .DataLength        = 16
     },
 
@@ -277,7 +277,7 @@ MQTT_Mqtt2SbTableEntry_t MQTT_Mqtt2SbTable[MQTT_MQTT2SB_MAX_TBL_ENTRIES] =
         .MsgId             = MQTT_APDS9960_GESTURE_TLM_MID,
         .MqttTopic         = "psz/apds9960/gesture",
         .PktType           = MQTT_TLM_PKT,
-        .DataType          = MQTT_STRING16,
+        .DataType          = MQTT_STRING32,
         .DataLength        = 4 
     },
 
